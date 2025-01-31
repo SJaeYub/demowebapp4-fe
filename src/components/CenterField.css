@@ -1,0 +1,14 @@
+.title-container {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.title-container h1 {
+    color: var(--deep-blue);
+    margin-bottom: 10px;
+}
+
+.title-container h2 {
+    color: var(--dark-gray);
+    font-weight: normal;
+}

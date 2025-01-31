@@ -1,0 +1,32 @@
+.button {
+    flex: 1;
+    padding: 15px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.button-primary {
+    background-color: #37379f;
+    color: white;
+}
+
+.button-primary:hover {
+    background-color: #2a2a7c;
+}
+
+.button-secondary {
+    background-color: #37379f;
+    color: white;
+}
+
+.button-secondary:hover {
+    background-color: #2a2a7c;
+}
+
+.button:active {
+    transform: scale(0.98);
+}

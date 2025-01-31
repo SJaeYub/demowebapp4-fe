@@ -1,6 +1,10 @@
+// pages/Login.tsx
 import React, {useState} from 'react';
-import './Login.css';
-import {replace, useNavigate} from "react-router-dom";
+import LoginForm from '../../components/LoginForm';
+import Button from "../../components/Button.jsx";
+import {useNavigate} from "react-router-dom";
+import CenterField from "../../components/CenterField.jsx";
+// import "./Login.css"
 
 const Login = () => {
     const [id, setId] = useState('');
@@ -13,45 +17,23 @@ const Login = () => {
 
     const handleSignup = () => {
         console.log('Signup clicked');
-        nav("/signup", {replace: true});
+        // nav("/signup", {replace: true});
     };
 
     return (
-        <div className="login-container">
-            <div className="title-container">
-                <h1>Welcome</h1>
-                <h2>demowebapp4</h2>
-            </div>
-            <div className="form-container">
-                <div className="input-group">
-                    <label htmlFor="id">ID</label>
-                    <input
-                        id="id"
-                        className="input-field"
-                        placeholder="아이디 입력"
-                        type="text"
-                        value={id}
-                        onChange={(e) => setId(e.target.value)}
-                    />
-                </div>
-                <div className="input-group">
-                    <label htmlFor="password">PW</label>
-                    <input
-                        id="password"
-                        className="input-field"
-                        placeholder="비밀번호 입력"
-                        type="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                    />
-                </div>
-                <div className="button-container">
-                    <button className="login-button" onClick={handleLogin}>로그인</button>
-                    <button className="signup-button" onClick={handleSignup}>회원가입</button>
-                </div>
-            </div>
-        </div>
+        <>
+            {/*<div className="login-container">*/}
+                <CenterField mainTxt={"welcome"} subTxt={"demo - webapp4"}/>
+            {/*</div>*/}
+            {/*<div className="form-container">*/}
+                <LoginForm id={id} passward={password} setId={setId} setPassword={setPassword}/>
+            {/*</div>*/}
+            {/*<div className="button-container">*/}
+                <Button text={"로그인"} onClick={handleLogin}/>
+                <Button text={"회원가입"} onClick={handleSignup}/>
+            {/*</div>*/}
+        </>
     );
-}
+};
 
 export default Login;
