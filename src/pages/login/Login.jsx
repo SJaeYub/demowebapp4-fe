@@ -17,7 +17,7 @@ const Login = () => {
 
     const handleSignup = () => {
         console.log('Signup clicked');
-        // nav("/signup", {replace: true});
+        nav("/signup", {replace: true});
     };
 
     return (
