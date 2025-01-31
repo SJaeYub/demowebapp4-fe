@@ -40,19 +40,21 @@ const Signup = () => {
     };
 
     return (
-        <div className="signup-container">
+        <>
+            {/*// <div className="signup-container">*/}
             <Button text={"Back"} onClick={handleBack}/>
-            <div className="title-container">
-                <CenterField mainTxt={"회원가입"} subTxt={"demowebapp4"}/>
-            </div>
-            <div className="form-container">
-                <SignupForm formData={formData} handleChange={handleSignup} handleIdCheck={handleIdCheck}
-                            handleCodeCheck={handleCodeCheck} handleSignup={handleSignup}/>
-            </div>
-            <div className="button-container">
-                <Button text={"sign up"} onClick={handleSignup}/>
-            </div>
-        </div>
+            {/*// <div className="title-container">*/}
+            <CenterField mainTxt={"회원가입"} subTxt={"demowebapp4"}/>
+            {/*// </div>*/}
+            {/*// <div className="form-container">*/}
+            <SignupForm formData={formData} handleChange={handleSignup} handleIdCheck={handleIdCheck}
+                        handleCodeCheck={handleCodeCheck} handleSignup={handleSignup}/>
+            {/*// </div>*/}
+            {/*// <div className="button-container">*/}
+            <Button text={"sign up"} onClick={handleSignup}/>
+            {/*// </div>*/}
+            {/*</div>*/}
+        </>
     );
 }
 
