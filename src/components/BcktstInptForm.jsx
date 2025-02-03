@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from 'react';
+import Button from "./Button.jsx";
 
-const BcktstInptForm = ({ strList }) => {
+const BcktstInptForm = ({strList}) => {
     const [selectedOption, setSelectedOption] = useState('');
     const [startDate, setStartDate] = useState('');
     const [endDate, setEndDate] = useState('');
@@ -15,7 +16,7 @@ const BcktstInptForm = ({ strList }) => {
 
     // 동적 입력 필드 값 변경 핸들러
     const handleInputChange = (fieldName, value) => {
-        setInputValues(prev => ({ ...prev, [fieldName]: value }));
+        setInputValues(prev => ({...prev, [fieldName]: value}));
     };
 
     // 백엔드 통신 모킹 함수
@@ -49,6 +50,13 @@ const BcktstInptForm = ({ strList }) => {
             setInputValues(newInputs);
         }
     }, [selectedOption]);
+
+    const handleSubmit = () => {
+        console.log('입력값:', inputValues);
+        console.log('날짜 범위:', {startDate, endDate});
+        console.log('선택 옵션:', selectedOption);
+    };
+
 
     return (
         <div className="bcktst-form">
@@ -99,8 +107,16 @@ const BcktstInptForm = ({ strList }) => {
                     </div>
                 ))}
             </div>
+            <div>
+                {/* 제출 버튼 추가 */}
+                <Button
+                    text="제출"
+                    onClick={handleSubmit}
+                />
+            </div>
         </div>
-    );
+    )
+        ;
 };
 
 export default BcktstInptForm;
