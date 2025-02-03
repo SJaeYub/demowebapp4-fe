@@ -1,10 +1,12 @@
 import CenterField from "../../components/CenterField.jsx";
 import BcktstInptForm from "../../components/BcktstInptForm.jsx";
 import MainMenu from "../../components/MainMenu.jsx";
+import {useNavigate} from "react-router-dom";
+import {btnTextList} from "../../util/mainBtnList.js";
 
 const Main = () => {
+    const nav = useNavigate();
     const tmpStrList = ['tstStr1', 'tstStr2', 'tstStr3'];
-    const btnTextList = ["Main", "Strategy", "Subscribe", "QnA", "Setting"];
 
     return (
         <>
