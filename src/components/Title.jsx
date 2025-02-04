@@ -1,4 +1,4 @@
-const Header = ({text}) => {
+const Title = ({text}) => {
     return (
         <div>
             <h2>{text}</h2>
@@ -6,4 +6,4 @@ const Header = ({text}) => {
     )
 }
 
-export default Header
+export default Title
