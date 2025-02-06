@@ -11,27 +11,27 @@ const QnARequest = () => {
     const [selectedId, setSelectedId] = useState(null); // 선택된 항목의 ID를 저장하는 상태
     const mockData = [
         {
-            num: 1,
+            id: 1,
             title: "temp request",
             date: "2020-05-01",
             author: "kim amugae"
         },
         {
-            num: 2,
+            id: 2,
             title: "temp request2",
             date: "2024-05-01",
             author: "lim amugae"
         },
         {
-            num: 3,
+            id: 3,
             title: "temp request3",
             date: "2018-05-01",
             author: "kim amugae"
         }
     ];
 
-    const handleItemClick = (id) => {
-        setSelectedId(id); // 항목 클릭 시 해당 ID를 상태에 저장
+    const handleItemClick = (obj) => {
+        setSelectedId(obj.id); // 항목 클릭 시 해당 ID를 상태에 저장
     };
 
     return (
@@ -47,7 +47,7 @@ const QnARequest = () => {
                 </>
             ) : (
                 // 선택된 항목이 있을 때는 PostInfo 컴포넌트를 렌더링
-                <PostInfo id={selectedId} />
+                <PostInfo postId={selectedId} useMock={true}/>
             )}
         </>
     );
