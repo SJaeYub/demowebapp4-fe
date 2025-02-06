@@ -4,6 +4,7 @@ import MainMenu from "../../components/MainMenu.jsx";
 import {btnTextList} from "../../util/mainBtnList.js";
 import Button from "../../components/Button.jsx";
 import List from "../../components/List.jsx";
+import PostInfo from "../../components/PostInfo.jsx";
 
 const QnARequest = () => {
 
@@ -35,6 +36,7 @@ const QnARequest = () => {
             <Title text={"QnA"}/>
             <Button text={"글쓰기"}/>
             <List jsonData={mockData} showActivateButton={false}/>
+
         </>
     )
 }
