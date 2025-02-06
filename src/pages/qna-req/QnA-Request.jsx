@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import CenterField from "../../components/CenterField.jsx";
 import Title from "../../components/Title.jsx";
 import MainMenu from "../../components/MainMenu.jsx";
@@ -6,9 +6,11 @@ import {btnTextList} from "../../util/mainBtnList.js";
 import Button from "../../components/Button.jsx";
 import List from "../../components/List.jsx";
 import PostInfo from "../../components/PostInfo.jsx";
+import {useNavigate} from "react-router-dom";
 
 const QnARequest = () => {
     const [selectedId, setSelectedId] = useState(null); // 선택된 항목의 ID를 저장하는 상태
+    const nav = useNavigate();
     const mockData = [
         {
             id: 1,
@@ -47,7 +49,12 @@ const QnARequest = () => {
                 </>
             ) : (
                 // 선택된 항목이 있을 때는 PostInfo 컴포넌트를 렌더링
-                <PostInfo postId={selectedId} useMock={true}/>
+                <>
+                    <Button text={"back"} onClick={() => {
+                        setSelectedId(null);
+                    }}/>
+                    <PostInfo postId={selectedId} useMock={true}/>
+                </>
             )}
         </>
     );
