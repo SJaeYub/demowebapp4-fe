@@ -1,6 +1,7 @@
-import Button from './Button'; // Button 컴포넌트가 별도로 존재한다고 가정
+import React from 'react';
+import Button from './Button';
 
-const List = ({ jsonData, showActivateButton }) => {
+const List = ({ jsonData, showActivateButton, onItemClick }) => {
     // 데이터가 배열이 아니면 에러를 던짐
     if (!Array.isArray(jsonData)) {
         throw new Error('Invalid data type. Data must be a JSON array.');
@@ -9,7 +10,7 @@ const List = ({ jsonData, showActivateButton }) => {
     // 헤더를 추출하기 위해 첫 번째 객체의 키를 사용
     const headers = Object.keys(jsonData[0]);
 
-    // 임시 onClick 함수
+    // 임시 onClick 함수 (activate 버튼용)
     const tempOnClick = () => {
         console.log('Activate button clicked');
     };
@@ -26,7 +27,7 @@ const List = ({ jsonData, showActivateButton }) => {
             </thead>
             <tbody>
             {jsonData.map((row, rowIndex) => (
-                <tr key={rowIndex}>
+                <tr key={rowIndex} onClick={() => onItemClick && onItemClick(row)}>
                     {headers.map((header, columnIndex) => (
                         <td key={columnIndex}>{row[header]}</td>
                     ))}
