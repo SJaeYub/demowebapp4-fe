@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import CenterField from "../../components/CenterField.jsx";
 import Title from "../../components/Title.jsx";
 import MainMenu from "../../components/MainMenu.jsx";
@@ -7,7 +8,7 @@ import List from "../../components/List.jsx";
 import PostInfo from "../../components/PostInfo.jsx";
 
 const QnARequest = () => {
-
+    const [selectedId, setSelectedId] = useState(null); // 선택된 항목의 ID를 저장하는 상태
     const mockData = [
         {
             num: 1,
@@ -27,18 +28,29 @@ const QnARequest = () => {
             date: "2018-05-01",
             author: "kim amugae"
         }
-    ]
+    ];
+
+    const handleItemClick = (id) => {
+        setSelectedId(id); // 항목 클릭 시 해당 ID를 상태에 저장
+    };
 
     return (
         <>
             <CenterField mainTxt={"demo-webapp4"} subTxt={"QnA/Request"}/>
             <MainMenu btnText={btnTextList}/>
-            <Title text={"QnA"}/>
-            <Button text={"글쓰기"}/>
-            <List jsonData={mockData} showActivateButton={false}/>
-
+            {selectedId === null ? (
+                // 선택된 항목이 없을 때는 Title, Button, List 컴포넌트를 렌더링
+                <>
+                    <Title text={"QnA"}/>
+                    <Button text={"글쓰기"}/>
+                    <List jsonData={mockData} onItemClick={handleItemClick} showActivateButton={false}/>
+                </>
+            ) : (
+                // 선택된 항목이 있을 때는 PostInfo 컴포넌트를 렌더링
+                <PostInfo id={selectedId} />
+            )}
         </>
-    )
-}
+    );
+};
 
 export default QnARequest;
