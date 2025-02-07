@@ -53,11 +53,11 @@ const PostInfo = ({postId, useMock = false}) => {
     return (
         <>
             <div>
-                {/*<h2>게시글 내용</h2>*/}
+                <h2>content</h2>
                 <p>{postData.content}</p>
             </div>
             <div>
-                {/*<h2>답변 내용</h2>*/}
+                <h2>answer</h2>
                 <p>{postData.answer}</p>
             </div>
         </>
