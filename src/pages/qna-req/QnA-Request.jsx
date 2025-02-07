@@ -53,6 +53,7 @@ const QnARequest = () => {
             {isWriting ? (
                 // 글쓰기 모드일 때는 Post 컴포넌트를 렌더링
                 <>
+                    <Title text={"Post"}/>
                     <Button text={"back"} onClick={handleBackClick}/>
                     <Post types={["title", "content"]} onCancel={() => setIsWriting(false)}/>
                 </>
@@ -68,6 +69,7 @@ const QnARequest = () => {
             ) : (
                 // 선택된 항목이 있을 때는 PostInfo 컴포넌트를 렌더링
                 <>
+                    <Title text={"Post-Info"}/>
                     <Button text={"back"} onClick={() => {
                         setSelectedId(null);
                     }}/>
