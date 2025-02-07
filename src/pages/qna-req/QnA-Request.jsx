@@ -45,7 +45,9 @@ const QnARequest = () => {
                 <>
                     <Title text={"QnA"}/>
                     <Button text={"글쓰기"}/>
-                    <List jsonData={mockData} onItemClick={handleItemClick} showActivateButton={false}/>
+                    <List jsonData={mockData}
+                          showActivateButton={false}
+                          onRowClick={handleItemClick}/>
                 </>
             ) : (
                 // 선택된 항목이 있을 때는 PostInfo 컴포넌트를 렌더링

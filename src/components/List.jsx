@@ -1,7 +1,16 @@
 import React from 'react';
 import Button from './Button';
 
-const List = ({ jsonData, showActivateButton, onItemClick }) => {
+/**
+ *
+ * @param jsonData 리스트 데이터
+ * @param showActivateButton active 버튼 활성화 유무
+ * @param onItemClick active 버튼 클릭 시 호출 함수
+ * @param onRowClick tableRow 버튼 클릭시 호출 함수
+ * @returns {Element}
+ * @constructor
+ */
+const   List = ({ jsonData, showActivateButton, onItemClick, onRowClick }) => {
     // 데이터가 배열이 아니면 에러를 던짐
     if (!Array.isArray(jsonData)) {
         throw new Error('Invalid data type. Data must be a JSON array.');
@@ -27,13 +36,13 @@ const List = ({ jsonData, showActivateButton, onItemClick }) => {
             </thead>
             <tbody>
             {jsonData.map((row, rowIndex) => (
-                <tr key={rowIndex} onClick={() => onItemClick && onItemClick(row)}>
+                <tr key={rowIndex} onClick={showActivateButton ? null : () => onRowClick && onRowClick(row)}>
                     {headers.map((header, columnIndex) => (
                         <td key={columnIndex}>{row[header]}</td>
                     ))}
                     {showActivateButton && (
                         <td>
-                            <Button text="activate" onClick={onItemClick} />
+                            <Button text="activate" onClick={() => onItemClick && onItemClick(row)} />
                         </td>
                     )}
                 </tr>

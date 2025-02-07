@@ -23,12 +23,17 @@ const Subscription = () => {
         }
     ]
 
+    const onClickActivate = () => {
+        // 결제 페이지 이동
+        console.log("activate");
+    }
+
     return (
         <>
             <CenterField mainTxt={"demo-webapp4"} subTxt={"Subscription"}/>
             <MainMenu btnText={btnTextList}/>
             <Title text={"subscribe plan"}/>
-            <List jsonData={mockSubscribePlan} showActivateButton={true}/>
+            <List jsonData={mockSubscribePlan} showActivateButton={true} onItemClick={onClickActivate}/>
             <Title text={"current plan"}/>
             <List jsonData={currentMockPlan} showActivateButton={false}/>
         </>
