@@ -33,6 +33,7 @@ const Strategy = () => {
     const handleActivateClick = async () => {
         const hasSubscription = await checkSubscription();
         if (!hasSubscription) {
+            alert("please subscribe");
             navigate("/subscribe");
         } else {
             // 구독 권한이 있는 경우, 활성화 로직을 수행합니다.

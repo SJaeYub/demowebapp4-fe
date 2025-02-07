@@ -19,7 +19,7 @@ const Subscription = () => {
 
     const currentMockPlan = [
         {
-            plan: "monthly",
+            plan: "tstStr2",
         }
     ]
 
