@@ -11,9 +11,9 @@ const List = ({ jsonData, showActivateButton, onItemClick }) => {
     const headers = Object.keys(jsonData[0]);
 
     // 임시 onClick 함수 (activate 버튼용)
-    const tempOnClick = () => {
-        console.log('Activate button clicked');
-    };
+    // const tempOnClick = () => {
+    //     console.log('Activate button clicked');
+    // };
 
     return (
         <table>
@@ -33,7 +33,7 @@ const List = ({ jsonData, showActivateButton, onItemClick }) => {
                     ))}
                     {showActivateButton && (
                         <td>
-                            <Button text="activate" onClick={tempOnClick} />
+                            <Button text="activate" onClick={onItemClick} />
                         </td>
                     )}
                 </tr>
