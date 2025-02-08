@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import CenterField from "../../components/CenterField.jsx";
 import Title from "../../components/Title.jsx";
 import MainMenu from "../../components/MainMenu.jsx";
 import {btnTextList} from "../../util/mainBtnList.js";
 import List from "../../components/List.jsx";
-import { useNavigate } from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 // Mock 데이터: 구독 여부 확인 API 대신 사용
 const checkSubscription = async () => {
@@ -21,13 +21,16 @@ const Strategy = () => {
     const navigate = useNavigate();
 
     const jsonData = [
-        { strName: 'tstStr1' },
-        { strName: 'tstStr2' },
-        { strName: 'tstStr3' },
+        {strName: 'tstStr1'},
+        {strName: 'tstStr2'},
+        {strName: 'tstStr3'},
     ];
 
     const activateMockData = [
-        { strName: 'tstStr2' },
+        {
+            strName: 'tstStr2',
+            activeAPI: "QdCVfgwe.dfdg"
+        }
     ];
 
     const handleActivateClick = async () => {
@@ -52,7 +55,7 @@ const Strategy = () => {
                 onItemClick={handleActivateClick}
             />
             <Title text={"current activate Strategy"}/>
-            <List jsonData={activateMockData} showActivateButton={false} />
+            <List jsonData={activateMockData} showActivateButton={false}/>
         </>
     )
 }
