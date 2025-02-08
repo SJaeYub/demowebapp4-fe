@@ -7,6 +7,7 @@ import Main from "./pages/main/Main.jsx";
 import Strategy from "./pages/main/Strategy.jsx";
 import Subscription from "./pages/subscription/Subscription.jsx";
 import QnARequest from "./pages/qna-req/QnA-Request.jsx";
+import PaymentInfo from "./pages/temp/PaymentInfo.jsx";
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
                 <Route path={"/strategy"} element={<Strategy/>}/>
                 <Route path={"/subscribe"} element={<Subscription/>}/>
                 <Route path={"/qna"} element={<QnARequest/>}/>
+                <Route path={"/pay-test"} element={<PaymentInfo/>}/>
             </Routes>
         </>
     )
