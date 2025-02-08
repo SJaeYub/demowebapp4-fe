@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "./Button.jsx";
 
 const SignupForm = ({formData, handleChange, handleSignup, handleIdCheck, handleCodeCheck}) => {
     return (
@@ -14,7 +15,7 @@ const SignupForm = ({formData, handleChange, handleSignup, handleIdCheck, handle
                     value={formData.id}
                     onChange={handleChange}
                 />
-                <button className="check-button" onClick={handleIdCheck}>중복검사</button>
+                <Button text={"check-valid"} onClick={handleCodeCheck}/>
             </div>
             <div className="input-group">
                 <label htmlFor="password">PW</label>
@@ -27,7 +28,7 @@ const SignupForm = ({formData, handleChange, handleSignup, handleIdCheck, handle
                     value={formData.password}
                     onChange={handleChange}
                 />
-            </div>
+            </div>z
             <div className="input-group">
                 <label htmlFor="confirmPassword">PW 확인</label>
                 <input
@@ -63,7 +64,7 @@ const SignupForm = ({formData, handleChange, handleSignup, handleIdCheck, handle
                     value={formData.registrationCode}
                     onChange={handleChange}
                 />
-                <button className="check-button" onClick={handleCodeCheck}>유효성 검사</button>
+                <Button text={"check-valid"} onClick={handleCodeCheck}/>
             </div>
             <div className="input-group">
                 <label htmlFor="name">이름</label>
