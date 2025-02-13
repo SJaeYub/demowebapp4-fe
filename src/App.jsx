@@ -19,7 +19,7 @@ function App() {
                 <Route path={"/main"} element={<Main/>}/>
                 <Route path={"/strategy"} element={<Strategy/>}/>
                 <Route path={"/subscribe"} element={<Subscription/>}/>
-                <Route path={"/qna"} element={<QnARequest/>}/>
+                {/*<Route path={"/qna"} element={<QnARequest/>}/>*/}
             </Routes>
         </>
     )
