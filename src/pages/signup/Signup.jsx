@@ -22,8 +22,25 @@ const Signup = () => {
         setFormData({...formData, [e.target.name]: e.target.value});
     };
 
-    const handleSignup = () => {
-        console.log('Signup attempted with:', formData);
+    const handleSignup = async () => {
+        try {
+            const response = await fetch('http://localhost:8080/api/members/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
+            const result = await response.json();
+            console.log('Signup result:', result);
+        } catch (error) {
+            console.error('Error during signup:', error);
+        }
     };
 
     const handleIdCheck = () => {
@@ -47,7 +64,7 @@ const Signup = () => {
             <CenterField mainTxt={"회원가입"} subTxt={"demowebapp4"}/>
             {/*// </div>*/}
             {/*// <div className="form-container">*/}
-            <SignupForm formData={formData} handleChange={handleSignup} handleIdCheck={handleIdCheck}
+            <SignupForm formData={formData} handleChange={handleChange} handleIdCheck={handleIdCheck}
                         handleCodeCheck={handleCodeCheck} handleSignup={handleSignup}/>
             {/*// </div>*/}
             {/*// <div className="button-container">*/}
